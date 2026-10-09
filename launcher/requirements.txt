@@ -1,0 +1,9 @@
+# Python launcher Lambda dependencies.
+# These are vendored into build/launcher-package by scripts/build_launcher_package.py.
+#
+# Versions are pinned for student-lab repeatability.
+# The build script installs Linux-compatible Lambda wheels even when run from Windows/Git Bash.
+
+anthropic==0.99.0
+boto3==1.43.47
+botocore==1.43.47

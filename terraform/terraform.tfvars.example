@@ -1,0 +1,55 @@
+aws_region  = "us-east-1"
+environment = "dev"
+
+project_name = "lambda-microvm-lab"
+
+# Leave this unique per AWS account if bucket name conflicts occur.
+artifact_bucket_name = "CHANGE-ME-microvm-artifacts-bucket"
+
+artifact_key = "microvm-artifacts/app.zip"
+
+microvm_image_name  = "class7-microvm-image"
+microvm_description = "Student lab Lambda MicroVM image built from Terraform."
+
+microvm_base_image_arn = "arn:aws:lambda:us-east-1:aws:microvm-image:al2023-1"
+
+# Get valid versions with:
+# aws lambda-microvms list-managed-microvm-image-versions \
+#   --image-identifier arn:aws:lambda:us-east-1:aws:microvm-image:al2023-1 \
+#   --region us-east-1
+microvm_base_image_version = "0"
+
+microvm_minimum_memory_mib = 2048
+application_port           = 8080
+
+ready_timeout_seconds    = 60
+validate_timeout_seconds = 60
+
+log_retention_days = 14
+
+# Replace this with the Claude self-hosted environment ID.
+# For lab-only validation before Claude is fully connected, use:
+# anthropic_environment_id = "manual-test"
+anthropic_environment_id = "env_REPLACE_WITH_YOUR_CLAUDE_ENVIRONMENT_ID"
+
+launcher_memory_size         = 256
+launcher_timeout_seconds     = 30
+microvm_max_duration_seconds = 28800
+
+microvm_idle_policy = {
+  maxIdleDurationSeconds   = 120
+  suspendedDurationSeconds = 0
+  autoResumeEnabled        = false
+}
+
+egress_network_connectors = [
+  "arn:aws:lambda:us-east-1:aws:network-connector:aws-network-connector:INTERNET_EGRESS"
+]
+
+environment_variables = {
+  NODE_ENV = "production"
+  PORT     = "8080"
+}
+
+# Use "python3" on Linux/macOS if python is not available.
+python_command = "python"

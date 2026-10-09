@@ -1,0 +1,68 @@
+# Terraform runtime data
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+
+# Terraform plans and local variable files
+*.tfplan
+tfplan
+*.tfvars
+*.tfvars.json
+
+# Keep example variable files
+!*.tfvars.example
+!terraform/*.tfvars.example
+
+# Terraform lock file should usually be committed for repeatable provider versions
+!terraform/.terraform.lock.hcl
+
+# Local build artifacts
+build/
+dist/
+*.zip
+*.tar
+*.tar.gz
+
+# Lambda local test outputs
+lambda-response.json
+
+# MicroVM run outputs (contain auth tokens, endpoints, and account IDs)
+microvm-run.json
+microvm-token.json
+deliverables/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.venv/
+.venv-lambda-build/
+venv/
+env/
+pip-wheel-metadata/
+.pytest_cache/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Secrets and keys
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.env
+.env.*
