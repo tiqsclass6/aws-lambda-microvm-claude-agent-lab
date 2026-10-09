@@ -64,6 +64,8 @@ async function handleRunHook(req, res) {
 }
 
 const server = http.createServer(async (req, res) => {
+  console.log(`${req.method} ${req.url}`);
+
   try {
     if (req.url === "/" || req.url === "/health") {
       return sendJson(res, 200, {

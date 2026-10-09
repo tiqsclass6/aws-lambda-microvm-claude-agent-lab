@@ -1,5 +1,7 @@
 # Lambda MicroVM + Claude Managed Agents CLI Commands
 
+Quick reference. For the full walkthrough with expected output, see [RUNBOOK.md](RUNBOOK.md).
+
 ## Deploy infrastructure
 
 ```bash

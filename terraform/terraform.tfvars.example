@@ -17,7 +17,7 @@ microvm_base_image_arn = "arn:aws:lambda:us-east-1:aws:microvm-image:al2023-1"
 # aws lambda-microvms list-managed-microvm-image-versions \
 #   --image-identifier arn:aws:lambda:us-east-1:aws:microvm-image:al2023-1 \
 #   --region us-east-1
-microvm_base_image_version = "0"
+microvm_base_image_version = "1"
 
 microvm_minimum_memory_mib = 2048
 application_port           = 8080

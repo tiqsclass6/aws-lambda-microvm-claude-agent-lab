@@ -8,28 +8,30 @@ This is a student lab / proof-of-concept. It demonstrates how Terraform can prov
 
 ---
 
-## **2. Current Canonical Deployment Values**
+## **2. Deployment Values**
 
-| **Item**                              | **Current value**                                                                                                  |
-|---------------------------------------|--------------------------------------------------------------------------------------------------------------------|
-| **AWS Region**                        | `us-east-1`                                                                                                        |
-| **AWS Account**                       | `<ACCOUNT_ID>`                                                                                                     |
-| **Terraform backend bucket**          | `class-7-state-files`                                                                                              |
-| **Terraform backend key**             | `lambda-labs/microvm.tfstate`                                                                                      |
-| **API Gateway webhook URL**           | `https://<API_ID>.execute-api.us-east-1.amazonaws.com/prod/claude/webhook`                                         |
-| **Artifact bucket**                   | `microvm-artifacts-bucket`                                                                                         |
-| **Artifact S3 URI**                   | `s3://microvm-artifacts-bucket/microvm-artifacts/app.zip`                                                          |
-| **Claude environment key secret ARN** | `arn:aws:secretsmanager:us-east-1:<ACCOUNT_ID>:secret:lambda-microvm-lab-dev/claude/environment-key-HbbDkY`        |
-| **Claude webhook signing secret ARN** | `arn:aws:secretsmanager:us-east-1:<ACCOUNT_ID>:secret:lambda-microvm-lab-dev/claude/webhook-signing-secret-r9XywX` |
-| **MicroVM image name**                | `class7-microvm-image`                                                                                             |
-| **MicroVM image ARN**                 | `arn:aws:lambda:us-east-1:<ACCOUNT_ID>:microvm-image:class7-microvm-image`                                         |
-| **MicroVM image state**               | `CREATED`                                                                                                          |
-| **Latest active image version**       | `1.0`                                                                                                              |
-| **Launcher Lambda log group**         | `/aws/lambda/lambda-microvm-lab-dev-microvm-launcher`                                                              |
-| **API Gateway log group**             | `/aws/apigateway/lambda-microvm-lab-dev-claude-webhook`                                                            |
-| **MicroVM log group**                 | `/aws/lambda/microvms/class7-microvm-image`                                                                        |
-| **CloudTrail bucket**                 | `lambda-microvm-lab-dev-cloudtrail-d06df742`                                                                       |
-| **CloudTrail trail ARN**              | `arn:aws:cloudtrail:us-east-1:<ACCOUNT_ID>:trail/lambda-microvm-lab-dev-microvm-trail`                             |
+`<ACCOUNT_ID>`, `<API_ID>`, `<SUFFIX>` and `<RANDOM_HEX>` differ per account or per deploy. Get the real values from `terraform output` after `terraform apply`.
+
+| **Item**                              | **Value**                                                                                                            |
+|---------------------------------------|----------------------------------------------------------------------------------------------------------------------|
+| **AWS Region**                        | `us-east-1`                                                                                                          |
+| **AWS Account**                       | `<ACCOUNT_ID>`                                                                                                       |
+| **Terraform backend bucket**          | `class-7-state-files`                                                                                                |
+| **Terraform backend key**             | `lambda-labs/microvm.tfstate`                                                                                        |
+| **API Gateway webhook URL**           | `https://<API_ID>.execute-api.us-east-1.amazonaws.com/prod/claude/webhook`                                           |
+| **Artifact bucket**                   | `microvm-artifacts-bucket`                                                                                           |
+| **Artifact S3 URI**                   | `s3://microvm-artifacts-bucket/microvm-artifacts/app.zip`                                                            |
+| **Claude environment key secret ARN** | `arn:aws:secretsmanager:us-east-1:<ACCOUNT_ID>:secret:lambda-microvm-lab-dev/claude/environment-key-<SUFFIX>`        |
+| **Claude webhook signing secret ARN** | `arn:aws:secretsmanager:us-east-1:<ACCOUNT_ID>:secret:lambda-microvm-lab-dev/claude/webhook-signing-secret-<SUFFIX>` |
+| **MicroVM image name**                | `class7-microvm-image`                                                                                               |
+| **MicroVM image ARN**                 | `arn:aws:lambda:us-east-1:<ACCOUNT_ID>:microvm-image:class7-microvm-image`                                           |
+| **MicroVM image state**               | `CREATED`                                                                                                            |
+| **Latest active image version**       | `1.0`                                                                                                                |
+| **Launcher Lambda log group**         | `/aws/lambda/lambda-microvm-lab-dev-microvm-launcher`                                                                |
+| **API Gateway log group**             | `/aws/apigateway/lambda-microvm-lab-dev-claude-webhook`                                                              |
+| **MicroVM log group**                 | `/aws/lambda/microvms/class7-microvm-image`                                                                          |
+| **CloudTrail bucket**                 | `lambda-microvm-lab-dev-cloudtrail-<RANDOM_HEX>`                                                                     |
+| **CloudTrail trail ARN**              | `arn:aws:cloudtrail:us-east-1:<ACCOUNT_ID>:trail/lambda-microvm-lab-dev-microvm-trail`                               |
 
 ---
 
